@@ -17,7 +17,7 @@ export class UserDTO {
   @IsEmail()
   readonly email: string;
 
-  @IsPhoneNumber()
+  @IsPhoneNumber("AM")
   readonly phone: string;
 
   @IsString()

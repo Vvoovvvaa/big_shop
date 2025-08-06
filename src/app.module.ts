@@ -7,9 +7,8 @@ import { UsersModule } from './resources/users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entityes/user.entity';
 import { Product } from './entityes/product.entity';
-import { RegisterController } from './resources/register/register.controller';
-import { RegisterModule } from './resources/register/register.module';
-import { RegisterService } from './resources/register/register.service';
+
+
 @Module({
   imports: [AuthModule,ProductsModule,UsersModule,
     TypeOrmModule.forRoot({
@@ -22,9 +21,8 @@ import { RegisterService } from './resources/register/register.service';
       entities: [User,Product],
       synchronize: true,
     }),
-    RegisterModule
   ],
-  controllers: [AppController,RegisterController],
-  providers: [AppService,RegisterService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
